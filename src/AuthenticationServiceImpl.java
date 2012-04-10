@@ -1,7 +1,7 @@
 /**
  * $Header$
  * 
- * ioc-simple - 
+ * ioc-basic - 
  * 
  * Copyright (C) 2012 Norvax, Inc.
  * All Rights Reserved
@@ -44,20 +44,21 @@
  * @version $Revision$ $Date$
  * @since 0.1
  */
-public interface AuthenticationService() {
+public class AuthenticationServiceImpl
+	implements AuthenticationService
+{
 
-	/**
-	 * Create user account
-	 */
-	void create();
+	private UserAccountDAO _userAccountDAO;
 
-	/**
-	 * Delete user account
-	 */
-	void delete();
+	public void create() {
+		_userAccountDAO.saveUser();
+	}
 
-	/**
-	 * Login user
-	 */
-	void login();
+	public void delete() {
+		_userAccountDAO.deleteUser();
+	}
+
+	public void login() {
+		// login code
+	}
 }

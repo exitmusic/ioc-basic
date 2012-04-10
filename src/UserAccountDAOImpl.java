@@ -1,7 +1,7 @@
 /**
  * $Header$
  * 
- * ioc-simple - 
+ * ioc-basic - 
  * 
  * Copyright (C) 2012 Norvax, Inc.
  * All Rights Reserved
@@ -44,20 +44,23 @@
  * @version $Revision$ $Date$
  * @since 0.1
  */
-public interface AuthenticationService() {
+public class UserAccountDAOImpl
+	implements UserAccountDAO
+{
 
-	/**
-	 * Create user account
-	 */
-	void create();
+	void deleteUser() {
+		// code
+	}
 
-	/**
-	 * Delete user account
-	 */
-	void delete();
+	void lookupById() {
+		// code
+	}
 
-	/**
-	 * Login user
-	 */
-	void login();
+	void lookupByUsername() {
+		// code
+	}
+
+	void saveUser() {
+		// code
+	}
 }
