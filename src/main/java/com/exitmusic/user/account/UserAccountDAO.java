@@ -38,3 +38,5 @@ public interface UserAccountDAO {
 	 */
 	void saveUser(String userId);
 }
+An internal error occurred during: "Setting build path".
+assertion failed: Cannot move '/ioc-basic/src'. Destination should not be under source's hierarchy.
