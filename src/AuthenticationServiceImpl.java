@@ -11,15 +11,34 @@ public class AuthenticationServiceImpl
 
 	private UserAccountDAO _userAccountDAO;
 
-	public void create() {
-		_userAccountDAO.saveUser();
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see AuthenticationService#create(java.lang.String)
+	 */
+	public void create(String userId) {
+		if (!_userAccountDAO.lookupById(userId)) {
+			_userAccountDAO.saveUser(userId);
+		}
 	}
 
-	public void delete() {
-		_userAccountDAO.deleteUser();
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see AuthenticationService#delete(java.lang.String)
+	 */
+	public void delete(String userId) {
+		if (_userAccountDAO.lookupById(userId)) {
+			_userAccountDAO.deleteUser(userId);
+		}
 	}
 
-	public void login() {
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see AuthenticationService#login(java.lang.String)
+	 */
+	public void login(String userId) {
 		// login code
 	}
 }

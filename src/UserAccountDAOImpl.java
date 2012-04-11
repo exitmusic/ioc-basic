@@ -9,19 +9,39 @@ public class UserAccountDAOImpl
 	implements UserAccountDAO
 {
 
-	void deleteUser() {
-		// code
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see UserAccountDAO#deleteUser(java.lang.String)
+	 */
+	public void deleteUser(String userId) {
+		// DELETE FROM user WHERE user_id = userId
 	}
 
-	void lookupById() {
-		// code
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see UserAccountDAO#lookupById(java.lang.String)
+	 */
+	public boolean lookupById(String userId) {
+		// SELECT * FROM user WHERE user_id = userId
 	}
 
-	void lookupByUsername() {
-		// code
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see UserAccountDAO#lookupByUsername(java.lang.String)
+	 */
+	public boolean lookupByUsername(String username) {
+		// SELECT * FROM user WHERE username = username
 	}
 
-	void saveUser() {
-		// code
+	/**
+	 * {@inheritDoc}
+	 * 
+	 * @see UserAccountDAO#saveUser(java.lang.String)
+	 */
+	public void saveUser(String userId) {
+		// INSERT INTO user VALUES ()
 	}
 }

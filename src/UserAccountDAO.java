@@ -9,21 +9,31 @@ public interface UserAccountDAO {
 
 	/**
 	 * Delete user account
+	 * 
+	 * @param userId
 	 */
-	void deleteUser();
+	void deleteUser(String userId);
 
 	/**
 	 * Look up user by ID
+	 * 
+	 * @param userId
+	 * @return Does user exist
 	 */
-	void lookupById();
+	boolean lookupById(String userId);
 
 	/**
 	 * Look up user by username
+	 * 
+	 * @param username
+	 * @return Does user exist
 	 */
-	void lookupByUsername();
+	boolean lookupByUsername(String username);
 
 	/**
 	 * Save user account
+	 * 
+	 * @param userId
 	 */
-	void saveUser();
+	void saveUser(String userId);
 }

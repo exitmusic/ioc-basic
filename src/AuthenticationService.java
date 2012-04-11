@@ -5,20 +5,26 @@
  * @version $Revision$ $Date$
  * @since 0.1
  */
-public interface AuthenticationService() {
+public interface AuthenticationService {
 
 	/**
 	 * Create user account
+	 * 
+	 * @param userId
 	 */
-	void create();
+	void create(String userId);
 
 	/**
 	 * Delete user account
+	 * 
+	 * @param userId
 	 */
-	void delete();
+	void delete(String userId);
 
 	/**
 	 * Login user
+	 * 
+	 * @param userId
 	 */
-	void login();
+	void login(String userId);
 }
