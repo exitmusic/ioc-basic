@@ -1,4 +1,6 @@
+
 package com.exitmusic.user.account;
+
 /**
  * Description: Description goes here.
  * 
@@ -21,7 +23,7 @@ public interface UserAccountDAO {
 	 * @param userId
 	 * @return Does user exist
 	 */
-	boolean lookupById(String userId);
+	UserAccount lookupById(String userId);
 
 	/**
 	 * Look up user by username
@@ -29,7 +31,7 @@ public interface UserAccountDAO {
 	 * @param username
 	 * @return Does user exist
 	 */
-	boolean lookupByUsername(String username);
+	UserAccount lookupByUsername(String username);
 
 	/**
 	 * Save user account
@@ -38,5 +40,3 @@ public interface UserAccountDAO {
 	 */
 	void saveUser(String userId);
 }
-An internal error occurred during: "Setting build path".
-assertion failed: Cannot move '/ioc-basic/src'. Destination should not be under source's hierarchy.

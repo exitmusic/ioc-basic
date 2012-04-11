@@ -1,4 +1,6 @@
+
 package com.exitmusic.user.auth;
+
 import com.exitmusic.user.account.UserAccountDAO;
 
 /**
@@ -12,7 +14,16 @@ public class AuthenticationServiceImpl
 	implements AuthenticationService
 {
 
-	private UserAccountDAO _userAccountDAO;
+	private final UserAccountDAO _userAccountDAO;
+
+	/**
+	 * Default constructor
+	 * 
+	 * @param userAccountDAO
+	 */
+	public AuthenticationServiceImpl(UserAccountDAO userAccountDAO) {
+		_userAccountDAO = userAccountDAO;
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -20,7 +31,7 @@ public class AuthenticationServiceImpl
 	 * @see AuthenticationService#create(java.lang.String)
 	 */
 	public void create(String userId) {
-		if (!_userAccountDAO.lookupById(userId)) {
+		if (_userAccountDAO.lookupById(userId) == null) {
 			_userAccountDAO.saveUser(userId);
 		}
 	}
@@ -31,7 +42,7 @@ public class AuthenticationServiceImpl
 	 * @see AuthenticationService#delete(java.lang.String)
 	 */
 	public void delete(String userId) {
-		if (_userAccountDAO.lookupById(userId)) {
+		if (_userAccountDAO.lookupById(userId) != null) {
 			_userAccountDAO.deleteUser(userId);
 		}
 	}

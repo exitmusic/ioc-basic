@@ -1,3 +1,4 @@
+
 package com.exitmusic.user.account;
 
 /**
@@ -25,8 +26,11 @@ public class UserAccountDAOImpl
 	 * 
 	 * @see UserAccountDAO#lookupById(java.lang.String)
 	 */
-	public boolean lookupById(String userId) {
+	public UserAccount lookupById(String userId) {
 		// SELECT * FROM user WHERE user_id = userId
+		UserAccount user;
+
+		return user;
 	}
 
 	/**
@@ -34,8 +38,11 @@ public class UserAccountDAOImpl
 	 * 
 	 * @see UserAccountDAO#lookupByUsername(java.lang.String)
 	 */
-	public boolean lookupByUsername(String username) {
+	public UserAccount lookupByUsername(String username) {
 		// SELECT * FROM user WHERE username = username
+		UserAccount user;
+
+		return user;
 	}
 
 	/**
