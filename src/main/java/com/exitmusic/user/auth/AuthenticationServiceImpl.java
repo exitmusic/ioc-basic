@@ -17,7 +17,7 @@ public class AuthenticationServiceImpl
 	private final UserAccountDAO _userAccountDAO;
 
 	/**
-	 * Default constructor
+	 * Default constructor - Is the method name correct?
 	 * 
 	 * @param userAccountDAO
 	 */
