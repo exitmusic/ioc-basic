@@ -13,6 +13,13 @@ public class UserAccountDAOTestImpl
 {
 
 	/**
+	 * Constructor
+	 */
+	public UserAccountDAOTestImpl() {
+		// super(); ?
+	}
+
+	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see com.exitmusic.user.account.UserAccountDAO#deleteUser(java.lang.String)

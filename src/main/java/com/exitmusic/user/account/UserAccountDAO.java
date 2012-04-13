@@ -21,7 +21,7 @@ public interface UserAccountDAO {
 	 * Look up user by ID
 	 * 
 	 * @param userId
-	 * @return Does user exist
+	 * @return Retrieved UserAccount object
 	 */
 	UserAccount lookupById(String userId);
 
@@ -29,7 +29,7 @@ public interface UserAccountDAO {
 	 * Look up user by username
 	 * 
 	 * @param username
-	 * @return Does user exist
+	 * @return Retrieved UserAccount object
 	 */
 	UserAccount lookupByUsername(String username);
 

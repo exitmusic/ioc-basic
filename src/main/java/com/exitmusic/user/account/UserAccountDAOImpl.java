@@ -13,6 +13,13 @@ public class UserAccountDAOImpl
 {
 
 	/**
+	 * Constructor
+	 */
+	public UserAccountDAOImpl() {
+		// super();?
+	}
+
+	/**
 	 * {@inheritDoc}
 	 * 
 	 * @see UserAccountDAO#deleteUser(java.lang.String)

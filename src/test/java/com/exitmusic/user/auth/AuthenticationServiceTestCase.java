@@ -21,7 +21,7 @@ public class AuthenticationServiceTestCase {
 
 	private UserAccountDAO _userAccountDAO;
 
-	private UserAccount testUserAccount;
+	private UserAccount _userAccount;
 
 	/**
 	 * Setup
@@ -30,7 +30,7 @@ public class AuthenticationServiceTestCase {
 	public void setUp() {
 		_userAccountDAO = new UserAccountDAOTestImpl();
 		_authenticationService = new AuthenticationServiceImpl(_userAccountDAO);
-		testUserAccount = new UserAccount("testUserId", "testUsername");
+		_userAccount = new UserAccount("testUserId", "testUsername");
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class AuthenticationServiceTestCase {
 	@Test
 	public void testUserAccountCreate() {
 		// How to test if account is created?
-		_authenticationService.create(testUserAccount);
+		_authenticationService.create(_userAccount);
 	}
 
 	/**
@@ -47,7 +47,7 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountDelete() {
-		_authenticationService.delete(testUserAccount.getUserId());
+		_authenticationService.delete(_userAccount.getUserId());
 	}
 
 	/**
@@ -55,6 +55,6 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountLogin() {
-		_authenticationService.login(testUserAccount.getUserId());
+		_authenticationService.login(_userAccount.getUserId());
 	}
 }
