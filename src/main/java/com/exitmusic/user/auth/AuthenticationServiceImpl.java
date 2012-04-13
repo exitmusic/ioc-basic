@@ -29,7 +29,7 @@ public class AuthenticationServiceImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see AuthenticationService#create(java.lang.String)
+	 * @see com.exitmusic.user.auth.AuthenticationService#create(com.exitmusic.user.account.UserAccount)
 	 */
 	public void create(UserAccount userAccount) {
 		if (_userAccountDAO.lookupById(userAccount.getUserId()) == null) {

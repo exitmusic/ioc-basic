@@ -1,8 +1,10 @@
 
 package com.exitmusic.user.auth;
 
+import org.junit.Before;
 import org.junit.Test;
 
+import com.exitmusic.user.account.UserAccount;
 import com.exitmusic.user.account.UserAccountDAO;
 import com.exitmusic.user.account.UserAccountDAOTestImpl;
 
@@ -19,14 +21,25 @@ public class AuthenticationServiceTestCase {
 
 	private UserAccountDAO _userAccountDAO;
 
+	private UserAccount testUserAccount;
+
+	/**
+	 * Setup
+	 */
+	@Before
+	public void setUp() {
+		_userAccountDAO = new UserAccountDAOTestImpl();
+		_authenticationService = new AuthenticationServiceImpl(_userAccountDAO);
+		testUserAccount = new UserAccount("testUserId", "testUsername");
+	}
+
 	/**
 	 * Verify user account creation
 	 */
 	@Test
 	public void testUserAccountCreate() {
-		_userAccountDAO = new UserAccountDAOTestImpl();
-		_authenticationService = new AuthenticationServiceImpl(_userAccountDAO);
-		_authenticationService.create("testaccount");
+		// How to test if account is created?
+		_authenticationService.create(testUserAccount);
 	}
 
 	/**
@@ -34,7 +47,7 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountDelete() {
-		// Code here
+		_authenticationService.delete(testUserAccount.getUserId());
 	}
 
 	/**
@@ -42,6 +55,6 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountLogin() {
-		// Code here
+		_authenticationService.login(testUserAccount.getUserId());
 	}
 }

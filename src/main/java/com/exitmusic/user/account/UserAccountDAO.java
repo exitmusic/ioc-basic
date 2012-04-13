@@ -36,7 +36,7 @@ public interface UserAccountDAO {
 	/**
 	 * Save user account
 	 * 
-	 * @param userId
+	 * @param userAccount
 	 */
 	void saveUser(UserAccount userAccount);
 }

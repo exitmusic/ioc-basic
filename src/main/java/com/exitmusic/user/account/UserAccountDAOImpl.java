@@ -28,7 +28,7 @@ public class UserAccountDAOImpl
 	 */
 	public UserAccount lookupById(String userId) {
 		// SELECT * FROM user WHERE user_id = userId
-		UserAccount user;
+		UserAccount user = new UserAccount(userId, "testUsername");
 
 		return user;
 	}
@@ -40,7 +40,7 @@ public class UserAccountDAOImpl
 	 */
 	public UserAccount lookupByUsername(String username) {
 		// SELECT * FROM user WHERE username = username
-		UserAccount user;
+		UserAccount user = new UserAccount("testUserId", username);
 
 		return user;
 	}

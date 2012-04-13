@@ -28,9 +28,8 @@ public class UserAccountDAOTestImpl
 	 * @see com.exitmusic.user.account.UserAccountDAO#lookupById(java.lang.String)
 	 */
 	public UserAccount lookupById(String userId) {
-		UserAccount testUserAccount = new UserAccount(userId, "testUsername");
-
-		return testUserAccount;
+		// Simulate the user does not exist
+		return null;
 	}
 
 	/**
@@ -39,9 +38,8 @@ public class UserAccountDAOTestImpl
 	 * @see com.exitmusic.user.account.UserAccountDAO#lookupByUsername(java.lang.String)
 	 */
 	public UserAccount lookupByUsername(String username) {
-		UserAccount testUserAccount = new UserAccount("testUserId", username);
-
-		return testUserAccount;
+		// Simulate the user does not exist
+		return null;
 	}
 
 	/**
