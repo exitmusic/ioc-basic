@@ -48,9 +48,9 @@ public class UserAccountDAOImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see UserAccountDAO#saveUser(java.lang.String)
+	 * @see com.exitmusic.user.account.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
-	public void saveUser(String userId) {
+	public void saveUser(UserAccount userAccount) {
 		// INSERT INTO user VALUES ()
 	}
 }

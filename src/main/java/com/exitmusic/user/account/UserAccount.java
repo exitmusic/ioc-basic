@@ -14,18 +14,41 @@ public class UserAccount {
 
 	private String _username;
 
+	/**
+	 * Constructor
+	 * 
+	 * @param userId
+	 * @param username
+	 */
+	public UserAccount(String userId, String username) {
+		_userId = userId;
+		_username = username;
+	}
+
+	/**
+	 * @return userId
+	 */
 	public String getUserId() {
 		return _userId;
 	}
 
+	/**
+	 * @return username
+	 */
 	public String getUsername() {
 		return _username;
 	}
 
+	/**
+	 * @param userId
+	 */
 	public void setUserId(String userId) {
-		_userId = userId
+		_userId = userId;
 	}
 
+	/**
+	 * @param username
+	 */
 	public void setUsername(String username) {
 		_username = username;
 	}

@@ -1,4 +1,8 @@
+
 package com.exitmusic.user.auth;
+
+import com.exitmusic.user.account.UserAccount;
+
 /**
  * Description: Description goes here.
  * 
@@ -13,7 +17,7 @@ public interface AuthenticationService {
 	 * 
 	 * @param userId
 	 */
-	void create(String userId);
+	void create(UserAccount userAccount);
 
 	/**
 	 * Delete user account

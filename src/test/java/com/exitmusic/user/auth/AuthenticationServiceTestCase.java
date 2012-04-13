@@ -1,6 +1,8 @@
 
 package com.exitmusic.user.auth;
 
+import org.junit.Test;
+
 import com.exitmusic.user.account.UserAccountDAO;
 import com.exitmusic.user.account.UserAccountDAOTestImpl;
 
@@ -15,7 +17,6 @@ public class AuthenticationServiceTestCase {
 
 	private AuthenticationService _authenticationService;
 
-	// Is this correct or should it be UserAccountDAOImpl?
 	private UserAccountDAO _userAccountDAO;
 
 	/**
@@ -23,10 +24,7 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountCreate() {
-		// Is this how you correctly specify the implementation?
 		_userAccountDAO = new UserAccountDAOTestImpl();
-
-		// Can you just use the interface name here?
 		_authenticationService = new AuthenticationServiceImpl(_userAccountDAO);
 		_authenticationService.create("testaccount");
 	}

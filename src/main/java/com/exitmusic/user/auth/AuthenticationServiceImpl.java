@@ -1,6 +1,7 @@
 
 package com.exitmusic.user.auth;
 
+import com.exitmusic.user.account.UserAccount;
 import com.exitmusic.user.account.UserAccountDAO;
 
 /**
@@ -30,9 +31,9 @@ public class AuthenticationServiceImpl
 	 * 
 	 * @see AuthenticationService#create(java.lang.String)
 	 */
-	public void create(String userId) {
-		if (_userAccountDAO.lookupById(userId) == null) {
-			_userAccountDAO.saveUser(userId);
+	public void create(UserAccount userAccount) {
+		if (_userAccountDAO.lookupById(userAccount.getUserId()) == null) {
+			_userAccountDAO.saveUser(userAccount);
 		}
 	}
 

@@ -28,8 +28,9 @@ public class UserAccountDAOTestImpl
 	 * @see com.exitmusic.user.account.UserAccountDAO#lookupById(java.lang.String)
 	 */
 	public UserAccount lookupById(String userId) {
-		// TODO Auto-generated method stub
-		return null;
+		UserAccount testUserAccount = new UserAccount(userId, "testUsername");
+
+		return testUserAccount;
 	}
 
 	/**
@@ -38,16 +39,17 @@ public class UserAccountDAOTestImpl
 	 * @see com.exitmusic.user.account.UserAccountDAO#lookupByUsername(java.lang.String)
 	 */
 	public UserAccount lookupByUsername(String username) {
-		// TODO Auto-generated method stub
-		return null;
+		UserAccount testUserAccount = new UserAccount("testUserId", username);
+
+		return testUserAccount;
 	}
 
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#saveUser(java.lang.String)
+	 * @see com.exitmusic.user.account.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
-	public void saveUser(String userId) {
+	public void saveUser(UserAccount userAccount) {
 		// TODO Auto-generated method stub
 
 	}
