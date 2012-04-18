@@ -1,5 +1,7 @@
 
-package com.exitmusic.user.account;
+package com.exitmusic.user.account.dao;
+
+import com.exitmusic.user.account.UserAccount;
 
 /**
  * Description: Description goes here.
@@ -55,7 +57,7 @@ public class UserAccountDAOImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
+	 * @see com.exitmusic.user.account.dao.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
 	public void saveUser(UserAccount userAccount) {
 		// INSERT INTO user VALUES ()

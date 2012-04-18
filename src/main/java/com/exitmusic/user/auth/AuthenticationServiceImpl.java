@@ -2,7 +2,7 @@
 package com.exitmusic.user.auth;
 
 import com.exitmusic.user.account.UserAccount;
-import com.exitmusic.user.account.UserAccountDAO;
+import com.exitmusic.user.account.dao.UserAccountDAO;
 
 /**
  * Description: Description goes here.
@@ -23,6 +23,8 @@ public class AuthenticationServiceImpl
 	 * @param userAccountDAO
 	 */
 	public AuthenticationServiceImpl(UserAccountDAO userAccountDAO) {
+		Assert.notNull(userAccountDAO, "userAccountDAO is required");
+
 		_userAccountDAO = userAccountDAO;
 	}
 

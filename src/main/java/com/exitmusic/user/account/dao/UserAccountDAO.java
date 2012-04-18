@@ -1,5 +1,7 @@
 
-package com.exitmusic.user.account;
+package com.exitmusic.user.account.dao;
+
+import com.exitmusic.user.account.UserAccount;
 
 /**
  * Description: Description goes here.

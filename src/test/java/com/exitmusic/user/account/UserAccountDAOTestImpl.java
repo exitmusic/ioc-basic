@@ -1,6 +1,9 @@
 
 package com.exitmusic.user.account;
 
+import com.exitmusic.user.account.UserAccount;
+import com.exitmusic.user.account.dao.UserAccountDAO;
+
 /**
  * Description: Description goes here.
  * 
@@ -22,7 +25,7 @@ public class UserAccountDAOTestImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#deleteUser(java.lang.String)
+	 * @see com.exitmusic.user.account.dao.UserAccountDAO#deleteUser(java.lang.String)
 	 */
 	public void deleteUser(String userId) {
 		// TODO Auto-generated method stub
@@ -32,7 +35,7 @@ public class UserAccountDAOTestImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#lookupById(java.lang.String)
+	 * @see com.exitmusic.user.account.dao.UserAccountDAO#lookupById(java.lang.String)
 	 */
 	public UserAccount lookupById(String userId) {
 		// Simulate the user does not exist
@@ -42,7 +45,7 @@ public class UserAccountDAOTestImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#lookupByUsername(java.lang.String)
+	 * @see com.exitmusic.user.account.dao.UserAccountDAO#lookupByUsername(java.lang.String)
 	 */
 	public UserAccount lookupByUsername(String username) {
 		// Simulate the user does not exist
@@ -52,7 +55,7 @@ public class UserAccountDAOTestImpl
 	/**
 	 * {@inheritDoc}
 	 * 
-	 * @see com.exitmusic.user.account.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
+	 * @see com.exitmusic.user.account.dao.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
 	public void saveUser(UserAccount userAccount) {
 		// TODO Auto-generated method stub

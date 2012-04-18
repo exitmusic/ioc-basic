@@ -1,12 +1,15 @@
 
 package com.exitmusic.user.auth;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+
 import org.junit.Before;
 import org.junit.Test;
 
 import com.exitmusic.user.account.UserAccount;
-import com.exitmusic.user.account.UserAccountDAO;
 import com.exitmusic.user.account.UserAccountDAOTestImpl;
+import com.exitmusic.user.account.dao.UserAccountDAO;
 
 /**
  * Description: Description goes here.
@@ -38,8 +41,8 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountCreate() {
-		// How to test if account is created?
 		_authenticationService.create(_userAccount);
+		assertEquals("UserAccount was not created", _userAccount, _userAccountDAO.lookupById("testUserId"));
 	}
 
 	/**
@@ -48,6 +51,7 @@ public class AuthenticationServiceTestCase {
 	@Test
 	public void testUserAccountDelete() {
 		_authenticationService.delete(_userAccount.getUserId());
+		assertNull("UserAccount was not deleted", _userAccountDAO.lookupById("testUserId"));
 	}
 
 	/**

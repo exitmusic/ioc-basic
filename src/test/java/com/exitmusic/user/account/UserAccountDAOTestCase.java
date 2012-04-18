@@ -6,6 +6,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.exitmusic.user.account.dao.UserAccountDAO;
+import com.exitmusic.user.account.dao.UserAccountDAOImpl;
+
 /**
  * Description: Description goes here.
  * 
@@ -22,7 +25,7 @@ public class UserAccountDAOTestCase {
 	 */
 	@Before
 	public void setUp() {
-		_userAccountDAO = new UserAccountDAOTestImpl();
+		_userAccountDAO = new UserAccountDAOImpl();
 	}
 
 	/**
@@ -38,9 +41,12 @@ public class UserAccountDAOTestCase {
 	 */
 	@Test
 	public void testLookupById() {
-		UserAccount testUserAccount = new UserAccount("testUserId", null);
+		final UserAccount expectedUserAccount = new UserAccount("testUserId", "testUsername");
+		final UserAccount actualUserAccount = _userAccountDAO.lookupById("testUserId");
 
-		assertEquals(testUserAccount, _userAccountDAO.lookupById("testUserId"));
+		assertEquals("UserAccount object not returned", expectedUserAccount, actualUserAccount);
+		assertEquals("Returned UserAccount userId does not match", "testUserId", actualUserAccount.getUserId());
+		assertEquals("Returned UserAccount username does not match", "testUsername", actualUserAccount.getUsername());
 	}
 
 	/**
@@ -48,9 +54,12 @@ public class UserAccountDAOTestCase {
 	 */
 	@Test
 	public void testLookupByUsername() {
-		UserAccount testUserAccount = new UserAccount("testUserId", "testUsername");
+		final UserAccount expectedUserAccount = new UserAccount("testUserId", "testUsername");
+		final UserAccount actualUserAccount = _userAccountDAO.lookupByUsername("testUserId");
 
-		assertEquals(testUserAccount, _userAccountDAO.lookupById("testUsername"));
+		assertEquals("UserAccount object not returned", expectedUserAccount, actualUserAccount);
+		assertEquals("Returned UserAccount username does not match", "testUsername", actualUserAccount.getUsername());
+		assertEquals("Returned UserAccount userId does not match", "testUserId", actualUserAccount.getUserId());
 	}
 
 	/**
@@ -58,8 +67,8 @@ public class UserAccountDAOTestCase {
 	 */
 	@Test
 	public void testSaveUser() {
-		UserAccount testUserAccount = new UserAccount("testUserId", "testUsername");
+		final UserAccount expectedUserAccount = new UserAccount("testUserId", "testUsername");
 
-		_userAccountDAO.saveUser(testUserAccount);
+		_userAccountDAO.saveUser(expectedUserAccount);
 	}
 }
