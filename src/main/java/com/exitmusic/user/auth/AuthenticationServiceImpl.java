@@ -23,7 +23,8 @@ public class AuthenticationServiceImpl
 	 * @param userAccountDAO
 	 */
 	public AuthenticationServiceImpl(UserAccountDAO userAccountDAO) {
-		Assert.notNull(userAccountDAO, "userAccountDAO is required");
+		// TODO Need to import springframework
+		// Assert.notNull(userAccountDAO, "userAccountDAO is required");
 
 		_userAccountDAO = userAccountDAO;
 	}
