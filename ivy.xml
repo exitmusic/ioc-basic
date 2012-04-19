@@ -1,0 +1,6 @@
+<ivy-module version="2.0">
+    <info organisation="com.exitmusic" module="ioc-basic"/>
+    <dependencies>
+        <dependency org="org.springframework" name="spring" rev="2.5.5" />
+    </dependencies>
+</ivy-module>

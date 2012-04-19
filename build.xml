@@ -1,0 +1,5 @@
+<project name="ioc-basic" xmlns:ivy="antlib:org.apache.ivy.ant">
+	<target name="resolve" description="--> retrieve dependencies with ivy">
+	    <ivy:retrieve />
+	</target>
+</project>
