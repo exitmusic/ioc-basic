@@ -1,4 +1,4 @@
-<project name="ioc-basic" xmlns:ivy="antlib:org.apache.ivy.ant">
+<project xmlns:ivy="antlib:org.apache.ivy.ant" name="ioc-basic">
 	<target name="resolve" description="--> retrieve dependencies with ivy">
 	    <ivy:retrieve />
 	</target>

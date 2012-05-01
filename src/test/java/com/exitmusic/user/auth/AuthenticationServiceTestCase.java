@@ -6,6 +6,9 @@ import static org.junit.Assert.assertNull;
 
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
 import com.exitmusic.user.account.UserAccount;
 import com.exitmusic.user.account.UserAccountDAOTestImpl;
@@ -18,12 +21,15 @@ import com.exitmusic.user.account.dao.UserAccountDAO;
  * @version $Revision$ $Date$
  * @since 0.1
  */
+@RunWith(MockitoJUnitRunner.class)
 public class AuthenticationServiceTestCase {
 
 	private AuthenticationService _authenticationService;
 
+	@Mock
 	private UserAccountDAO _userAccountDAO;
 
+	@Mock
 	private UserAccount _userAccount;
 
 	/**

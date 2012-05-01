@@ -2,5 +2,6 @@
     <info organisation="com.exitmusic" module="ioc-basic"/>
     <dependencies>
         <dependency org="org.springframework" name="spring" rev="2.5.5" />
+        <dependency org="org.mockito" name="mockito-all" rev="1.8.5" />
     </dependencies>
 </ivy-module>
