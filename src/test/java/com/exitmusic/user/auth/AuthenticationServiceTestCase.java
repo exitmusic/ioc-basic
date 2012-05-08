@@ -42,7 +42,7 @@ public class AuthenticationServiceTestCase {
 		_userAccount = new UserAccount("testUserId", "testUsername");
 		
 		when(_userAccountDAO.deleteUser("testUserId"));
-		when(_userAccountDAO.lookupById("testUserId").thenReturn());
+		
 		when(_userAccountDAO.lookupByUsername("testUsername").thenReturn());
 		when(_userAccountDAO.saveUser(_userAccount));
 	}
@@ -52,6 +52,7 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountCreate() {
+		when(_userAccountDAO.lookupById("testUserId").thenReturn(null));
 		_authenticationService.create(_userAccount);
 		assertEquals("UserAccount was not created", _userAccount, _userAccountDAO.lookupById("testUserId"));
 	}
@@ -61,6 +62,7 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Test
 	public void testUserAccountDelete() {
+		when(_userAccountDAO.lookupById("testUserId").thenReturn("user exists"));
 		_authenticationService.delete(_userAccount.getUserId());
 		assertNull("UserAccount was not deleted", _userAccountDAO.lookupById("testUserId"));
 	}
