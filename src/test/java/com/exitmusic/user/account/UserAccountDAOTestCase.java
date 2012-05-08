@@ -25,6 +25,7 @@ public class UserAccountDAOTestCase {
 	 */
 	@Before
 	public void setUp() {
+		// This needs to be tested by a seeded test "database". It doesn't make sense to have a test implementation of a DAO.
 		_userAccountDAO = new UserAccountDAOImpl();
 	}
 

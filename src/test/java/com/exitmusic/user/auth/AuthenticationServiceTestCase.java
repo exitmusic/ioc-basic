@@ -29,7 +29,6 @@ public class AuthenticationServiceTestCase {
 	@Mock
 	private UserAccountDAO _userAccountDAO;
 
-	@Mock
 	private UserAccount _userAccount;
 
 	/**
@@ -37,9 +36,15 @@ public class AuthenticationServiceTestCase {
 	 */
 	@Before
 	public void setUp() {
-		_userAccountDAO = new UserAccountDAOTestImpl();
+		// The mock eliminates the need for a separate test implementation
+		//_userAccountDAO = new UserAccountDAOTestImpl();
 		_authenticationService = new AuthenticationServiceImpl(_userAccountDAO);
 		_userAccount = new UserAccount("testUserId", "testUsername");
+		
+		when(_userAccountDAO.deleteUser("testUserId"));
+		when(_userAccountDAO.lookupById("testUserId").thenReturn());
+		when(_userAccountDAO.lookupByUsername("testUsername").thenReturn());
+		when(_userAccountDAO.saveUser(_userAccount));
 	}
 
 	/**
