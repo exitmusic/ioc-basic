@@ -34,10 +34,14 @@ public class AuthenticationServiceImpl
 	 * 
 	 * @see com.exitmusic.user.auth.AuthenticationService#create(com.exitmusic.user.account.UserAccount)
 	 */
-	public void create(UserAccount userAccount) {
+	public boolean create(UserAccount userAccount) {
+		boolean success = false;
+		
 		if (_userAccountDAO.lookupById(userAccount.getUserId()) == null) {
 			_userAccountDAO.saveUser(userAccount);
+			success = true;
 		}
+		return success;
 	}
 
 	/**
@@ -45,10 +49,14 @@ public class AuthenticationServiceImpl
 	 * 
 	 * @see AuthenticationService#delete(java.lang.String)
 	 */
-	public void delete(String userId) {
+	public boolean delete(String userId) {
+		boolean success = false;
+		
 		if (_userAccountDAO.lookupById(userId) != null) {
 			_userAccountDAO.deleteUser(userId);
+			success = true;
 		}
+		return success;
 	}
 
 	/**
@@ -56,7 +64,10 @@ public class AuthenticationServiceImpl
 	 * 
 	 * @see AuthenticationService#login(java.lang.String)
 	 */
-	public void login(String userId) {
+	public boolean login(String userId) {
+		boolean success = false;
 		// login code
+		
+		return success;
 	}
 }

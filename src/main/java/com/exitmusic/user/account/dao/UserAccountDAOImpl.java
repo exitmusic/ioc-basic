@@ -26,8 +26,10 @@ public class UserAccountDAOImpl
 	 * 
 	 * @see UserAccountDAO#deleteUser(java.lang.String)
 	 */
-	public void deleteUser(String userId) {
+	public boolean deleteUser(String userId) {
+		boolean success = false;
 		// DELETE FROM user WHERE user_id = userId
+		return success;
 	}
 
 	/**
@@ -59,7 +61,9 @@ public class UserAccountDAOImpl
 	 * 
 	 * @see com.exitmusic.user.account.dao.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
-	public void saveUser(UserAccount userAccount) {
+	public boolean saveUser(UserAccount userAccount) {
+		boolean success = false;
 		// INSERT INTO user VALUES ()
+		return success;
 	}
 }

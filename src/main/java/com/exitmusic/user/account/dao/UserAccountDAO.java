@@ -17,7 +17,7 @@ public interface UserAccountDAO {
 	 * 
 	 * @param userId
 	 */
-	void deleteUser(String userId);
+	boolean deleteUser(String userId);
 
 	/**
 	 * Look up user by ID
@@ -40,5 +40,5 @@ public interface UserAccountDAO {
 	 * 
 	 * @param userAccount
 	 */
-	void saveUser(UserAccount userAccount);
+	boolean saveUser(UserAccount userAccount);
 }

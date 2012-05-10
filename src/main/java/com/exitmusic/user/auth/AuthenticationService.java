@@ -17,19 +17,19 @@ public interface AuthenticationService {
 	 * 
 	 * @param userAccount
 	 */
-	void create(UserAccount userAccount);
+	boolean create(UserAccount userAccount);
 
 	/**
 	 * Delete user account
 	 * 
 	 * @param userId
 	 */
-	void delete(String userId);
+	boolean delete(String userId);
 
 	/**
 	 * Login user
 	 * 
 	 * @param userId
 	 */
-	void login(String userId);
+	boolean login(String userId);
 }
