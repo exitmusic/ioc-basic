@@ -27,9 +27,9 @@ public class UserAccountDAOTestImpl
 	 * 
 	 * @see com.exitmusic.user.account.dao.UserAccountDAO#deleteUser(java.lang.String)
 	 */
-	public void deleteUser(String userId) {
+	public boolean deleteUser(String userId) {
 		// TODO Auto-generated method stub
-
+		return false;
 	}
 
 	/**
@@ -57,9 +57,9 @@ public class UserAccountDAOTestImpl
 	 * 
 	 * @see com.exitmusic.user.account.dao.UserAccountDAO#saveUser(com.exitmusic.user.account.UserAccount)
 	 */
-	public void saveUser(UserAccount userAccount) {
+	public boolean saveUser(UserAccount userAccount) {
 		// TODO Auto-generated method stub
-
+		return false;
 	}
 
 }
