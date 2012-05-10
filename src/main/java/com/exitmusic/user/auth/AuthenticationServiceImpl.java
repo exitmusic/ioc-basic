@@ -38,8 +38,7 @@ public class AuthenticationServiceImpl
 		boolean success = false;
 		
 		if (_userAccountDAO.lookupById(userAccount.getUserId()) == null) {
-			_userAccountDAO.saveUser(userAccount);
-			success = true;
+			success = _userAccountDAO.saveUser(userAccount);
 		}
 		return success;
 	}
@@ -53,8 +52,7 @@ public class AuthenticationServiceImpl
 		boolean success = false;
 		
 		if (_userAccountDAO.lookupById(userId) != null) {
-			_userAccountDAO.deleteUser(userId);
-			success = true;
+			success = _userAccountDAO.deleteUser(userId);
 		}
 		return success;
 	}

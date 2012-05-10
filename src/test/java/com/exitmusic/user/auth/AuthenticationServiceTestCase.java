@@ -52,7 +52,8 @@ public class AuthenticationServiceTestCase {
 		
 		// Setup
 		testUserAccount = new UserAccount("testUserId", "testUsername");
-		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(testUserAccount);
+		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(null);
+		Mockito.when(_userAccountDAO.saveUser(testUserAccount)).thenReturn(true);
 		
 		// Run
 		createSuccess = _authenticationService.create(testUserAccount);
@@ -70,6 +71,7 @@ public class AuthenticationServiceTestCase {
 		// Setup
 		testUserAccount = new UserAccount("testUserId", "testUsername");
 		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(testUserAccount);
+		Mockito.when(_userAccountDAO.deleteUser("testUserId")).thenReturn(true);
 
 		// Run
 		deleteSuccess = _authenticationService.delete(testUserAccount.getUserId());
