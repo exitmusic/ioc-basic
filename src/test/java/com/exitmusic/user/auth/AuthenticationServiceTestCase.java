@@ -88,6 +88,7 @@ public class AuthenticationServiceTestCase {
 		
 		// Setup
 		testUserAccount = new UserAccount("testUserId", "testUsername");
+		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(testUserAccount);
 		
 		// Run
 		loginSuccess = _authenticationService.login(testUserAccount.getUserId());

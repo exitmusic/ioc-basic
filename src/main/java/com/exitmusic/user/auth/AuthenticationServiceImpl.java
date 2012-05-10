@@ -64,8 +64,10 @@ public class AuthenticationServiceImpl
 	 */
 	public boolean login(String userId) {
 		boolean success = false;
-		// login code
-		
+		// fake login code
+		if (_userAccountDAO.lookupById(userId) != null) {
+			success = true;
+		}
 		return success;
 	}
 }
