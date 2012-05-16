@@ -58,6 +58,8 @@ public class AuthenticationServiceTestCase {
 		// Run
 		createSuccess = _authenticationService.create(testUserAccount);
 		assertEquals("UserAccount was not created", true, createSuccess);
+		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Mockito.anyString());
+		Mockito.verify(_userAccountDAO, Mockito.times(1)).saveUser(testUserAccount);
 	}
 
 	/**
@@ -76,6 +78,8 @@ public class AuthenticationServiceTestCase {
 		// Run
 		deleteSuccess = _authenticationService.delete(testUserAccount.getUserId());
 		assertEquals("UserAccount was not deleted", true, deleteSuccess);
+		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Mockito.anyString());
+		Mockito.verify(_userAccountDAO, Mockito.times(1)).deleteUser(Mockito.anyString());
 	}
 
 	/**
@@ -93,5 +97,6 @@ public class AuthenticationServiceTestCase {
 		// Run
 		loginSuccess = _authenticationService.login(testUserAccount.getUserId());
 		assertEquals("Login failed", true, loginSuccess);
+		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Mockito.anyString());
 	}
 }
