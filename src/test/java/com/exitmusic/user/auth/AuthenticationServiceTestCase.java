@@ -53,11 +53,11 @@ public class AuthenticationServiceTestCase {
 		// Setup
 		testUserAccount = new UserAccount("testUserId", "testUsername");
 		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(null);
-		Mockito.when(_userAccountDAO.saveUser(testUserAccount)).thenReturn(true);
+		Mockito.when(Boolean.valueOf(_userAccountDAO.saveUser(testUserAccount))).thenReturn(Boolean.valueOf(true));
 
 		// Run
 		createSuccess = _authenticationService.create(testUserAccount);
-		assertEquals("UserAccount was not created", true, createSuccess);
+		assertEquals("UserAccount was not created", Boolean.valueOf(true), Boolean.valueOf(createSuccess));
 		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Matchers.anyString());
 		Mockito.verify(_userAccountDAO, Mockito.times(1)).saveUser(testUserAccount);
 	}
@@ -73,11 +73,11 @@ public class AuthenticationServiceTestCase {
 		// Setup
 		testUserAccount = new UserAccount("testUserId", "testUsername");
 		Mockito.when(_userAccountDAO.lookupById("testUserId")).thenReturn(testUserAccount);
-		Mockito.when(_userAccountDAO.deleteUser("testUserId")).thenReturn(true);
+		Mockito.when(Boolean.valueOf(_userAccountDAO.deleteUser("testUserId"))).thenReturn(Boolean.valueOf(true));
 
 		// Run
 		deleteSuccess = _authenticationService.delete(testUserAccount.getUserId());
-		assertEquals("UserAccount was not deleted", true, deleteSuccess);
+		assertEquals("UserAccount was not deleted", Boolean.valueOf(true), Boolean.valueOf(deleteSuccess));
 		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Matchers.anyString());
 		Mockito.verify(_userAccountDAO, Mockito.times(1)).deleteUser(Matchers.anyString());
 	}
@@ -96,7 +96,7 @@ public class AuthenticationServiceTestCase {
 
 		// Run
 		loginSuccess = _authenticationService.login(testUserAccount.getUserId());
-		assertEquals("Login failed", true, loginSuccess);
+		assertEquals("Login failed", Boolean.valueOf(true), Boolean.valueOf(loginSuccess));
 		Mockito.verify(_userAccountDAO, Mockito.times(1)).lookupById(Matchers.anyString());
 	}
 }
