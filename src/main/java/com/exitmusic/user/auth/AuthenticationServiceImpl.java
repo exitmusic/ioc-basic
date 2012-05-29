@@ -1,6 +1,8 @@
 
 package com.exitmusic.user.auth;
 
+import org.springframework.util.Assert;
+
 import com.exitmusic.user.account.UserAccount;
 import com.exitmusic.user.account.dao.UserAccountDAO;
 
@@ -24,7 +26,7 @@ public class AuthenticationServiceImpl
 	 */
 	public AuthenticationServiceImpl(UserAccountDAO userAccountDAO) {
 		// TODO Need to import springframework
-		// Assert.notNull(userAccountDAO, "userAccountDAO is required");
+		Assert.notNull(userAccountDAO, "userAccountDAO is required");
 
 		_userAccountDAO = userAccountDAO;
 	}
@@ -36,7 +38,7 @@ public class AuthenticationServiceImpl
 	 */
 	public boolean create(UserAccount userAccount) {
 		boolean success = false;
-		
+
 		if (_userAccountDAO.lookupById(userAccount.getUserId()) == null) {
 			success = _userAccountDAO.saveUser(userAccount);
 		}
@@ -50,7 +52,7 @@ public class AuthenticationServiceImpl
 	 */
 	public boolean delete(String userId) {
 		boolean success = false;
-		
+
 		if (_userAccountDAO.lookupById(userId) != null) {
 			success = _userAccountDAO.deleteUser(userId);
 		}
