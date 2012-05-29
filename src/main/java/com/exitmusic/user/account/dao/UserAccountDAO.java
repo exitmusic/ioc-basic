@@ -16,6 +16,7 @@ public interface UserAccountDAO {
 	 * Delete user account
 	 * 
 	 * @param userId
+	 * @return boolean indicating success
 	 */
 	boolean deleteUser(String userId);
 
@@ -39,6 +40,7 @@ public interface UserAccountDAO {
 	 * Save user account
 	 * 
 	 * @param userAccount
+	 * @return boolean indicating success
 	 */
 	boolean saveUser(UserAccount userAccount);
 }

@@ -16,6 +16,7 @@ public interface AuthenticationService {
 	 * Create user account
 	 * 
 	 * @param userAccount
+	 * @return boolean indicating success
 	 */
 	boolean create(UserAccount userAccount);
 
@@ -23,6 +24,7 @@ public interface AuthenticationService {
 	 * Delete user account
 	 * 
 	 * @param userId
+	 * @return boolean indicating success
 	 */
 	boolean delete(String userId);
 
@@ -30,6 +32,7 @@ public interface AuthenticationService {
 	 * Login user
 	 * 
 	 * @param userId
+	 * @return boolean indicating success
 	 */
 	boolean login(String userId);
 }
